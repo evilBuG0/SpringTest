@@ -10,5 +10,6 @@
 	<util:list id="Carlist">
 		<ref bean="car"/>
 	</util:list>
-<bean id="Person" class="spring.Person" p:name="张三" p:age="15" autowire="byType"></bean>
+<bean id="Person" class="spring.Person" p:name="张三" p:age="15" p:car-ref="Carlist"></bean>
+<bean id="Person2" parent="Person" p:name="李四"></bean>
 </beans>
