@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+<bean id="car" class="spring.Car" p:type="BMW" p:factory="长春一汽" p:price="200000"></bean>
+	<util:list id="Carlist">
+		<ref bean="car"/>
+	</util:list>
+<bean id="Person" class="spring.Person" p:name="张三" p:age="15" autowire="byType"></bean>
+</beans>
