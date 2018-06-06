@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ApplicationContext sa=new ClassPathXmlApplicationContext("IOC.xml");
-		Person p2=(Person) sa.getBean("Person2");
+		Person p2=(Person) sa.getBean("Person");
 		System.out.println(p2);
 	}
 

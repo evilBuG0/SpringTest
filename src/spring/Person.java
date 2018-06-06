@@ -5,6 +5,17 @@ public class Person {
 	private String name;
 	private int age;
 	private List<Car> cars;
+	
+	public Person() {
+		System.out.println("进入到构造器中；");
+	}
+	
+	public void a() {
+		System.out.println("走入到初始化方法");
+	}
+	public void b() {
+		System.out.println("销毁方法调用了");
+	}
 	public String getName() {
 		return name;
 	}
@@ -13,9 +24,11 @@ public class Person {
 	}
 	
 	public void setName(String name) {
+		System.out.println("setname方法");
 		this.name = name;
 	}
 	public void setAge(int age) {
+		System.out.println("setAge方法");
 		this.age = age;
 	}
 	
@@ -24,6 +37,7 @@ public class Person {
 		return cars;
 	}
 	public void setCar(List<Car> car) {
+		System.out.println("setCar方法");
 		this.cars = car;
 	}
 	
@@ -38,5 +52,5 @@ public class Person {
 	public String toString() {
 		return "Person [name=" + name + ", age=" + age + ", cars=" + cars + "]";
 	}
-	public Person() {}
+	
 }
