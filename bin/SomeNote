@@ -1,0 +1,2 @@
+java.text.DateFormat抽象类  静态方法getDateFormatInstance(int) ;获取一个日期格式化对象
+java.text.SimpleDateFormat  public Date parse(String);匹配的类型

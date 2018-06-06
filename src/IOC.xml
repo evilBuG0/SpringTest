@@ -8,12 +8,22 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
-<!-- 引用外部属性文件；完成属性值与bean的配置的分离，解耦
+ <!-- 引用外部属性文件；完成属性值与bean的配置的分离，解耦
 	1:创建属性，*properties key=value	 
 	2:配置文件当中去引用外部属性文件的内容，通过key值来引用${key}
 	3:告知IOC容器引用属性文件
- -->
- <bean id="mybeanPostProcessor" class="spring.PostProcess"></bean>
+
+ <bean id="mybeanPostProcessor" class="spring.PostProcess"></bean> -->
+ 	<!-- 包含静态工厂方法的类 --> 
+ <bean id="dateFormat" class="java.text.DateFormat" factory-method="getDateInstance">
+ <constructor-arg value="2"></constructor-arg>
+  </bean>
+  <bean id="simpleDateFormat" class="java.text.SimpleDateFormat">
+  <constructor-arg value="yyyy-MM-dd hh-mm-ss"></constructor-arg>
+  </bean>
+  <bean id="Date" factory-bean="simpleDateFormat" factory-method="parse">
+  <constructor-arg value="2001-05-12 12-12-12"></constructor-arg>
+  </bean>
  <context:property-placeholder location="classpath:person.properties"/>
 <bean id="car" class="spring.Car" p:type="BMW" p:factory="长春一汽" p:price="200000"></bean>
 	<util:list id="Carlist">
