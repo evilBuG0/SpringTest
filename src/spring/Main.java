@@ -13,10 +13,12 @@ public class Main {
 		ApplicationContext sa=new ClassPathXmlApplicationContext("IOC.xml");
 		//Person p2=(Person) sa.getBean("Person");
 		//System.out.println(p2);
-		DateFormat df=(DateFormat) sa.getBean("dateFormat");
-		Date sdf=(Date) sa.getBean("Date");
-		System.out.println(sdf);
+//		DateFormat df=(DateFormat) sa.getBean("dateFormat");
+//		Date sdf=(Date) sa.getBean("Date");
+//		System.out.println(sdf);
 		//System.out.println(df);
+		Car car=(Car) sa.getBean("car2");
+		System.out.println(car);
 	}
 
 }

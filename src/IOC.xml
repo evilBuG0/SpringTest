@@ -31,4 +31,5 @@
 	</util:list>
 <bean id="Person" class="spring.Person" p:name="${personName}" p:age="${personAge}" p:car-ref="Carlist" init-method="a" destroy-method="b"></bean>
 <!--  bean id="Person2" parent="Person" p:name="李四">parent属性用来继承</bean>-->
+<bean id="car2" class="spring.CarFacatoryBean"></bean>
 </beans>

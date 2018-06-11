@@ -1,2 +1,4 @@
 java.text.DateFormat抽象类  静态方法getDateFormatInstance(int) ;获取一个日期格式化对象
 java.text.SimpleDateFormat  public Date parse(String);匹配的类型
+常用spring注解
+@Component是所有受Spring 管理组件的通用形式，@Component注解可以放在类的头上，@Component不推荐使用。Component标注
