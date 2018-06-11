@@ -8,6 +8,7 @@
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
 		<config>src/IOC.xml</config>
+		<config>src/IOC_scan.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
