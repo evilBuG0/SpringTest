@@ -17,4 +17,8 @@ java.text.SimpleDateFormat  public Date parse(String);匹配的类型
 1：需要写一个切面类，类，Aspect标注
 2：共同的业务加入切面，共同业务的方法
 3前置通知@Before(execution(连接点的完整签名))，后置通知@After
-4：需要在Spring配置文件中，加入一个非常重要的标签，Aspect注解的类进行自动生成代理的工作
+4：需要在Spring配置文件中，加入一个非常重要的标签，Aspect注解的类进行自动生成代理的工作<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+5:需要进行对切面类，和目标对象进行监管：<context:component-scan base-package="com.spring.beans.aop"></context:component-scan>
+
+在通知方法的内部，如果想访问连接点的细节可以在通知方法中申明一个类型为JoinPoint的参数，然后就能访问链接细节。
+

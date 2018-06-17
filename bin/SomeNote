@@ -6,3 +6,19 @@ java.text.SimpleDateFormat  public Date parse(String);匹配的类型
 @Respository:标识持久层bean组件
 @Service 标识服务层（业务层）bean组件
 @Controller:标识表现层bean组件
+连接点：横切关注点的另外一种表达形式，共同业务和核心业务分离的点，前置，后置，异常处理等
+切点：可以通过切点定位到某个特定的连接点
+要在Spring应用中使用AspectJ注解：必须在classpath下包含AspectJ类库：aopalliance.jar,aspectj.weaver.jar和spring-aspects.jar
+将aop Schema 添加到<beans>根元素中 
+要在Spring IOC容器中启用AspectJ注解支持，只要在Bean配置文件中定义一个空的XML元素<aop:aspect j-autoproxy>
+当Spring IOC容器侦测到Bean配置文件中的<aop:aspect j-autoproxy>元素时，会自动为与AspectJ切面匹配的Bean创建代理
+
+通过AspectJ框架标注进行AOP的配置
+1：需要写一个切面类，类，Aspect标注
+2：共同的业务加入切面，共同业务的方法
+3前置通知@Before(execution(连接点的完整签名))，后置通知@After
+4：需要在Spring配置文件中，加入一个非常重要的标签，Aspect注解的类进行自动生成代理的工作<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+5:需要进行对切面类，和目标对象进行监管：<context:component-scan base-package="com.spring.beans.aop"></context:component-scan>
+
+在通知方法的内部，如果想访问连接点的细节可以在通知方法中申明一个类型为JoinPoint的参数，然后就能访问链接细节。
+
