@@ -12,3 +12,9 @@ java.text.SimpleDateFormat  public Date parse(String);匹配的类型
 将aop Schema 添加到<beans>根元素中 
 要在Spring IOC容器中启用AspectJ注解支持，只要在Bean配置文件中定义一个空的XML元素<aop:aspect j-autoproxy>
 当Spring IOC容器侦测到Bean配置文件中的<aop:aspect j-autoproxy>元素时，会自动为与AspectJ切面匹配的Bean创建代理
+
+通过AspectJ框架标注进行AOP的配置
+1：需要写一个切面类，类，Aspect标注
+2：共同的业务加入切面，共同业务的方法
+3前置通知@Before(execution(连接点的完整签名))，后置通知@After
+4：需要在Spring配置文件中，加入一个非常重要的标签，Aspect注解的类进行自动生成代理的工作
