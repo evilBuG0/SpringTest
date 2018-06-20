@@ -19,8 +19,8 @@ public static  void main(String[] args) {
 	
 	ApplicationContext ac=new ClassPathXmlApplicationContext("IOC_scan.xml");
 	Computer com=(Computer) ac.getBean("computerimpl");
-	System.out.println(com.div(1, 2));
-	System.out.println(com.add(1, 2));
+	System.out.println(com.div(1, 0));
+	//System.out.println(com.add(1, 2));
 	
 }
 

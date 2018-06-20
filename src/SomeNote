@@ -22,3 +22,12 @@ java.text.SimpleDateFormat  public Date parse(String);匹配的类型
 
 在通知方法的内部，如果想访问连接点的细节可以在通知方法中申明一个类型为JoinPoint的参数，然后就能访问链接细节。
 
+spring常见通知：
+1：前置通知 @Before
+2：后置通知 @After
+3：返回通知 @AfterReturning，只有正确返回结果才去执行
+4：异常通知 @AfterThrowing,只在连接点抛出异常时才执行
+5:环绕通知，连接点的参数类型必须是ProceedingJoinPoint,它是JoinPoint的子接口，允许控制何时执行，是否执行连接点 （注意：环绕通知的方法需要返回
+目标方法执行之后的结果，即调用joinPoint.proceed();的返回值，否则会出现空指针异常
+）
+
